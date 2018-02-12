@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="card col-4" *ngFor="let item of buingItems">
+    <div class="card-body">
+      <p class="card-text">{{item}}</p>
+      <a href="#">Mark as done</a>
+    </div>
+  </div>
+</div>
+<form class="form-inline">
+  <div class="form-group mx-3">
+    <input type="text" class="form-control" [(ngModel)]="addItem" [ngModelOptions]="{standalone: true}">
+  </div>
+  <button class="btn btn-default" (click)="addingItem()">Add Item</button>
+</form>
