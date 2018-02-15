@@ -1,14 +1,21 @@
+{{ buingItems | json}}
 <div class="row">
   <div class="card col-4" *ngFor="let item of buingItems">
     <div class="card-body">
-      <p class="card-text">{{item}}</p>
+      <h4>{{item.name}}</h4>
+      <p class="card-text">
+        {{item |json}}
+      </p>
       <a href="#">Mark as done</a>
     </div>
   </div>
 </div>
-<form class="form-inline">
-  <div class="form-group mx-3">
-    <input type="text" class="form-control" [(ngModel)]="addItem" [ngModelOptions]="{standalone: true}">
+
+<form>
+  <div class="form-group">
+    <label for="inputEmail1">Name</label>
+    <input type="text" class="form-control" id="inputEmail1" [(ngModel)]="addItem" [ngModelOptions]="{standalone: true}"
+           placeholder="Enter name">
   </div>
-  <button class="btn btn-default" (click)="addingItem()">Add Item</button>
+  <button type="submit" class="btn btn-primary" (click)="addingItem()">Submit</button>
 </form>
